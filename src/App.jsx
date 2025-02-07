@@ -6,6 +6,7 @@ import "./styles/index.css"
 export const App = () => {
     return (
         <>
+        <h1>hello</h1>
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
