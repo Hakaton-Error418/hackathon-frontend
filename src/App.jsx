@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router"
 import { Home } from "./components/pages/Home"
 import { Layout } from "./Layouts/Layout"
-import "./styles/index.css"
+
 
 export const App = () => {
     return (
         <>
-        <h1>hello</h1>
+        <h1 className="bg-gray-20 text-6xl">hello</h1>
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
-                    <Route path="/profile" element={<ProfileLayout />}>
+                    {/* <Route path="/profile" element={<ProfileLayout />}>
                         <Route index element={<Profile />} />
                         <Route path="setting" element={<ProfileSetting />} />
                         <Route path="rating" element={<Rating />} />
@@ -20,13 +20,13 @@ export const App = () => {
                         </Route>
                         <Route path="history" element={<History />} />
                         <Route path="achievements" element={<Achievements />} />
-                    </Route>
-                    <Route path="/join/:id" element={<Join />} />
+                    </Route> */}
+                    {/* <Route path="/join/:id" element={<Join />} /> 
                     <Route path="/test" element={<TestLayout />}>
                         <Route index element={<Test />} />
                         <Route path="itmap/:count" element={<Itmap />} />
                         <Route path="question/:id" element={<Question />} />
-                    </Route>
+                    </Route> */}
                 </Route>
             </Routes>
         </>
