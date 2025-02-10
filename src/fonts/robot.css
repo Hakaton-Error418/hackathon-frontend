@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Roboto";
+    src:
+        url("./fonts/Roboto-VariableFont_wdth.woff") format("woff"),
+        url("./fonts/Roboto-VariableFont_wdth.woff2") format("woff2");
+}

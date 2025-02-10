@@ -1,3 +1,55 @@
-@import "tailwindcss/preflight"; 
 @import "tailwindcss";
+@import "./fonts/fonts.css";
 
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto;
+}
+main {
+    flex-grow: 1;
+}
+
+@theme {
+    --breakpoint-xl: 1440px;
+    --breakpoint-md: 768px;
+
+    --font-roboto: "Roboto";
+
+    --color-white: #fff;
+    --color-black: #000;
+    --color-blue-100: #778797;
+    --color-blue-200: #657187;
+    --color-blue-300: #445771;
+    --color-blue-400: #2d3e58;
+    --color-blue-500: #263751;
+    --color-blue-600: #17263d;
+    --color-cinder: #030512;
+    --color-yankees-blue: #20304a;
+    --color-fiord: #505e79;
+    --color-cool-grey: #8e90a7;
+    --color-bon-jour: #e0d9e0;
+    --color-grey: #ccc;
+    --color-black-opacity: rgba(0, 0, 0, 0.75);
+}
+
+.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
