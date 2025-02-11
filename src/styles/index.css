@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 body {
     display: flex;
     flex-direction: column;
@@ -52,4 +54,14 @@ main {
 .scrollbar-hidden {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+input:-webkit-autofill {
+    background-color: transparent !important;
+    color: inherit !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    border-color: white !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
