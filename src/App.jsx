@@ -4,6 +4,8 @@ import { Layout } from "./Layouts/Layout"
 import { ApolloProvider } from "@apollo/client"
 import { client } from "./constans/client"
 import { ProfileLayout } from "./Layouts/ProfileLayout"
+import Quests from "./components/pages/Quests"
+import CreateQuests from "./components/pages/CreateQuests"
 
 export const App = () => {
     return (
@@ -14,12 +16,12 @@ export const App = () => {
                         <Route index element={<Home />} />
                         <Route path="/profile" element={<ProfileLayout />} />
                         {/* <Route path="setting" element={<ProfileSetting />} />
-                        <Route path="rating" element={<Rating />} />
-                        <Route path="quests" element={<QuestsLayout />}>
+                        <Route path="rating" element={<Rating />} /> */}
+                        <Route path="quests">
                             <Route index element={<Quests />} />
                             <Route path="new" element={<CreateQuests />} />
                         </Route>
-                        <Route path="history" element={<History />} />
+                        {/* <Route path="history" element={<History />} />
                         <Route path="achievements" element={<Achievements />} /> */}
                     </Route>
                     {/* <Route path="/join/:id" element={<Join />} /> 

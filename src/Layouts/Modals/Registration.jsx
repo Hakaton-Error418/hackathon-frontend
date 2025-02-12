@@ -8,6 +8,7 @@ import { client } from "../../constans/client"
 import { setToken } from "../../constans/token"
 import Loader from "../Loader"
 import GoogleAuth from "./GoogleAuth"
+import { setId } from "../../constans/id"
 
 const schemaYup = object({
     userName: string()
@@ -44,8 +45,11 @@ const REGISTER_USER = gql`
         $password: String!
         $userName: String!
     ) {
-        registerUser(email: $email, password: $password, userName: $userName) {
-            token
+        registerUser(email: $email, userName: $userName, password: $password) {
+            user {
+                id
+                token
+            }
         }
     }
 `
@@ -55,6 +59,7 @@ const SIGNIN_USER = gql`
         loginUser(email: $email, password: $password) {
             user {
                 token
+                id
             }
         }
     }
@@ -74,11 +79,14 @@ class Registration extends Component {
             if (signin) {
                 data = await this.doSignin(info)
                 setToken(data.loginUser.user.token)
+                setId(data.loginUser.user.id)
                 changeSignin()
             } else {
                 data = await this.doRegistration(info)
-                setToken(data.registerUser.token)
+                setToken(data.registerUser.user.token)
                 changeReg()
+                console.log(data)
+                setId(data.registerUser.user.id)
             }
         } catch (error) {
             console.log(error)
@@ -102,13 +110,6 @@ class Registration extends Component {
         })
         return data
     }
-
-    // componentDidMount() {
-    //     this.googleLogin = googleTokenClient({
-    //       client_id: "YOUR_CLIENT_ID",
-    //       callback: (response) => console.log(response),
-    //     });
-    //   }
 
     getData(values) {
         const data = { ...values }
@@ -248,12 +249,12 @@ class Registration extends Component {
     }
 }
 
-function getBtnLiStyled() {
+export function getBtnLiStyled() {
     return `border-bon-jour rounded-[18px] border-2 border-solid px-[20px] py-[8px] mx-auto md:py-4 
     md:px-6.5  xl:px-7 xl:py-4`
 }
 
-function getBtnStyle() {
+export function getBtnStyle() {
     return `flex items-center gap-3.5 md:text-xl w-54 md:w-64 md:gap-3 xl:gap-7 xl:w-85`
 }
 
