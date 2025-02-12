@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router"
 import { Home } from "./components/pages/Home"
-import { Profile } from "./components/pages/Profile"
 import { Layout } from "./Layouts/Layout"
 import { ApolloProvider } from "@apollo/client"
 import { client } from "./constans/client"
@@ -14,7 +13,6 @@ export const App = () => {
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
                         <Route path="/profile" element={<ProfileLayout />} />
-                        <Route index element={<Profile />} />
                         {/* <Route path="setting" element={<ProfileSetting />} />
                         <Route path="rating" element={<Rating />} />
                         <Route path="quests" element={<QuestsLayout />}>
