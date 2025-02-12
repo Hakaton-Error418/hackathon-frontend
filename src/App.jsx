@@ -6,7 +6,7 @@ import { client } from "./constans/client"
 import { ProfileLayout } from "./Layouts/ProfileLayout"
 import Achivments from "./components/pages/Profile/Achievements"
 import { Foo } from "./components/pages/Profile/Rating"
-
+import { Profile } from "./components/pages/Profile"
 export const App = () => {
     return (
         <>
