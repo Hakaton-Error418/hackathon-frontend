@@ -10,6 +10,8 @@ const GET_USER = gql`
         }
     }
 `
+
+
 export const ProfileLayout = () => {
   const { loading, error, data  } = useQuery(GET_USER);
   console.log(useQuery(GET_USER))
