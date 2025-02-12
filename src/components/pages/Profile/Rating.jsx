@@ -31,11 +31,13 @@ export class Foo extends Component {
           rating={this.state.rating}
           starRatedColor="red"
           changeRating={this.changeRating}
+          
           numberOfStars={5}
+
           name="rating"
         />
 
-        
+
         <button type="submit" onClick={this.handleSubmit}>Підвердити</button>
       </div>
     );
