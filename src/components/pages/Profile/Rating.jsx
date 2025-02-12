@@ -34,6 +34,8 @@ export class Foo extends Component {
           numberOfStars={5}
           name="rating"
         />
+
+        
         <button type="submit" onClick={this.handleSubmit}>Підвердити</button>
       </div>
     );
