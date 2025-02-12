@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
@@ -57,7 +56,7 @@ main {
 }
 @media (min-width: 768px) {
     .container {
-        min-width: 648px;
+        min-width: 768px;
         padding: 0 60px;
     }
 }
