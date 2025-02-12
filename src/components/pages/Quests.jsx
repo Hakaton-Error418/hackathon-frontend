@@ -29,7 +29,7 @@ class Quests extends Component {
             <>
                 <div className="container mt-5">
                     <Link
-                        to="/quests/new"
+                        to="/profile/quests/new"
                         className="bg-grey-light mx-auto flex w-60 justify-center rounded-[10px] px-5 py-3 text-xl"
                     >
                         Cтворити квест
