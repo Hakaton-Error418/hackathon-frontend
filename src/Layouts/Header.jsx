@@ -4,6 +4,7 @@ import GetSunSvg from "../img/GetSunSvg"
 import GetMoonSvg from "../img/GetMoonSvg"
 import GetLogoSvg from "../img/GetLogoSvg"
 import { Link } from "react-router"
+import { getToken } from "../constans/token"
 
 class Header extends Component {
     changeTheme() {

@@ -59,7 +59,10 @@ export class ProfileLayout extends Component {
                     <div className="md:flex md:items-center md:justify-center md:gap-15 xl:gap-22.25">
                         <div className="flex h-28 items-center justify-center md:block md:h-auto">
                             <img
-                                src={user.avatar}
+                                src={
+                                    user.avatar ||
+                                    "https://res.cloudinary.com/dk3syrsg5/image/upload/v1733484608/defoult-plant_rd42lo.svg"
+                                }
                                 alt="avatar"
                                 className="h-28 w-28 rounded-full object-cover md:h-45 md:w-45 xl:h-80 xl:w-80"
                             />
