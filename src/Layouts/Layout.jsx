@@ -1,13 +1,31 @@
 import { Outlet } from "react-router"
-import { Header } from "./Header"
-import { RootModals } from "./Modals/rootModals"
+import RootModals from "./Modals/RootModals"
+import Header from "./Header"
+import { Component } from "react"
 
-export const Layout = () => {
-    return (
-        <>
-            <Header />
-            <Outlet />
-            <RootModals />
-        </>
-    )
+export class Layout extends Component {
+    state = {
+        isSignin: false,
+    }
+
+    changeIsSignin = () => {
+        this.setState((prev) => ({
+            isSignin: !prev.isSignin,
+        }))
+    }
+
+    render() {
+        const { isSignin } = this.state
+
+        return (
+            <>
+                <Header changeIsSignin={this.changeIsSignin} />
+                <Outlet />
+                <RootModals
+                    isSignin={isSignin}
+                    changeIsSignin={this.changeIsSignin}
+                />
+            </>
+        )
+    }
 }

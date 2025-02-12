@@ -1,17 +1,18 @@
 import { Route, Routes } from "react-router"
 import { Home } from "./components/pages/Home"
 import { Layout } from "./Layouts/Layout"
-
+import { ApolloProvider } from "@apollo/client"
+import { client } from "./constans/client"
+import { ProfileLayout } from "./Layouts/ProfileLayout"
 
 export const App = () => {
     return (
         <>
-        <h1 className="bg-gray-20 text-6xl">hello</h1>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    {/* <Route path="/profile" element={<ProfileLayout />}> */}
-                        {/* <Route index element={<Profile />} /> */}
+            <ApolloProvider client={client}>
+                <Routes>
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Home />} />
+                        <Route path="/profile" element={<ProfileLayout />} />
                         {/* <Route path="setting" element={<ProfileSetting />} />
                         <Route path="rating" element={<Rating />} />
                         <Route path="quests" element={<QuestsLayout />}>
@@ -27,8 +28,9 @@ export const App = () => {
                         <Route path="itmap/:count" element={<Itmap />} />
                         <Route path="question/:id" element={<Question />} />
                     </Route> */}
-                {/* </Route> */}
-            </Routes>
+                    {/* </Route> */}
+                </Routes>
+            </ApolloProvider>
         </>
     )
 }
