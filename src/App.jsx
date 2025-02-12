@@ -6,6 +6,7 @@ import { ApolloProvider } from "@apollo/client"
 import { client } from "./constans/client"
 import { ProfileLayout } from "./Layouts/ProfileLayout"
 import Achivments from "./components/pages/Profile/Achievements"
+import { Foo } from "./components/pages/Profile/Rating"
 export const App = () => {
     return (
         <>
@@ -22,6 +23,7 @@ export const App = () => {
                         {/* <Route path="history" element={<History />} /> */}
                         <Route path="achievements" element={<Achivments />} />
                     </Route>
+                    <Route path ='/rate' element={<Foo/>}/>
                     {/* <Route path="/join/:id" element={<Join />} /> 
                     <Route path="/test" element={<TestLayout />}>
                         <Route index element={<Test />} />
