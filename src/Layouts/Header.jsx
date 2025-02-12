@@ -1,8 +1,8 @@
 import { Component } from "react"
-import GetUserSvgIcon from "../img/getUserSvgIcon"
-import GetSunSvg from "../img/getSunSvg"
-import GetMoonSvg from "../img/getMoonSvg"
-import GetLogoSvg from "../img/getLogoSvg"
+import GetUserSvgIcon from "../img/GetUserSvgIcon"
+import GetSunSvg from "../img/GetSunSvg"
+import GetMoonSvg from "../img/GetMoonSvg"
+import GetLogoSvg from "../img/GetLogoSvg"
 import { Link } from "react-router"
 
 class Header extends Component {
