@@ -8,7 +8,6 @@ export const App = () => {
     return (
         <>
             <ApolloProvider client={client}>
-                <h1 className="bg-gray-20 text-6xl">hello</h1>
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />

@@ -114,7 +114,7 @@ class Registration extends Component {
 
         const { loader } = this.state
         return (
-            <div className="font-roboto scrollbar-hidden bg-black-opacity fixed top-0 left-0 flex h-[100%] w-[100%] items-center justify-center overflow-y-scroll md:px-33 md:pt-120 md:pb-22 xl:px-80">
+            <div className="font-roboto scrollbar-hidden bg-black-opacity fixed top-0 left-0 z-100 flex h-[100%] w-[100%] items-center justify-center overflow-y-scroll md:px-33 md:pt-120 md:pb-22 xl:px-80">
                 {loader && <Loader />}
                 <Formik
                     validationSchema={signin ? signinSchemaYup : schemaYup}
