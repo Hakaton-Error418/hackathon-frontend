@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -13,8 +13,9 @@ main {
 }
 
 @theme {
-    --breakpoint-xl: 1440px;
-    --breakpoint-md: 768px;
+
+    --breakpoint-xl:1440px;
+    --breakpoint-md:768px;
 
     --font-roboto: "Roboto";
 
@@ -50,9 +51,20 @@ main {
         padding: 0 60px;
     }
 }
+
+.container {
+    min-width: 300px;
+    padding: 0 10px;
+}
 @media (min-width: 768px) {
     .container {
-        min-width: 1032px;
+        min-width: 648px;
+        padding: 0 60px;
+    }
+}
+@media (min-width: 1440px) {
+    .container {
+        min-width: 1440px;
         padding: 0 204px;
     }
 }

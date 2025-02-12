@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router"
 import { Home } from "./components/pages/Home"
+import { Profile } from "./components/pages/Profile"
 import { Layout } from "./Layouts/Layout"
 import { ApolloProvider } from "@apollo/client"
 import { client } from "./constans/client"
