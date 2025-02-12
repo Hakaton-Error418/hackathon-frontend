@@ -8,6 +8,8 @@ import { client } from "../../constans/client"
 import { setToken } from "../../constans/token"
 import Loader from "../Loader"
 import GoogleAuth from "./GoogleAuth"
+import { setId } from "../../constans/id"
+
 
 const schemaYup = object({
     userName: string()
@@ -28,6 +30,7 @@ const schemaYup = object({
         .required("Поле check password є обов'язковим"),
 })
 
+
 const signinSchemaYup = object({
     email: string()
         .email("Неправельний емейл")
@@ -38,32 +41,40 @@ const signinSchemaYup = object({
         .required("Поле password є обов'язковим"),
 })
 
+
 const REGISTER_USER = gql`
     mutation RegisterUser(
         $email: String!
         $password: String!
         $userName: String!
     ) {
-        registerUser(email: $email, password: $password, userName: $userName) {
-            token
-        }
-    }
-`
-
-const SIGNIN_USER = gql`
-    mutation RegisterUser($email: String!, $password: String!) {
-        loginUser(email: $email, password: $password) {
+        registerUser(email: $email, userName: $userName, password: $password) {
             user {
+                id
                 token
             }
         }
     }
 `
 
+
+const SIGNIN_USER = gql`
+    mutation RegisterUser($email: String!, $password: String!) {
+        loginUser(email: $email, password: $password) {
+            user {
+                token
+                id
+            }
+        }
+    }
+`
+
+
 export class Registration extends Component {
     state = {
         loader: false,
     }
+
 
     handleSubmit = async (values) => {
         this.setState({ loader: true })
@@ -74,11 +85,14 @@ export class Registration extends Component {
             if (signin) {
                 data = await this.doSignin(info)
                 setToken(data.loginUser.user.token)
+                setId(data.loginUser.user.id)
                 changeSignin()
             } else {
                 data = await this.doRegistration(info)
-                setToken(data.registerUser.token)
+                setToken(data.registerUser.user.token)
                 changeReg()
+                console.log(data)
+                setId(data.registerUser.user.id)
             }
         } catch (error) {
             console.log(error)
@@ -86,6 +100,7 @@ export class Registration extends Component {
             this.setState({ loader: false })
         }
     }
+
 
     async doRegistration(info) {
         const { data } = await client.mutate({
@@ -95,6 +110,7 @@ export class Registration extends Component {
         return data
     }
 
+
     async doSignin(info) {
         const { data } = await client.mutate({
             mutation: SIGNIN_USER,
@@ -103,12 +119,6 @@ export class Registration extends Component {
         return data
     }
 
-    // componentDidMount() {
-    //     this.googleLogin = googleTokenClient({
-    //       client_id: "YOUR_CLIENT_ID",
-    //       callback: (response) => console.log(response),
-    //     });
-    //   }
 
     getData(values) {
         const data = { ...values }
@@ -116,8 +126,10 @@ export class Registration extends Component {
         return data
     }
 
+
     render() {
         const { signin, changeSignin, changeReg } = this.props
+
 
         const { loader } = this.state
         return (
@@ -248,21 +260,28 @@ export class Registration extends Component {
     }
 }
 
-function getBtnLiStyled() {
-    return `border-bon-jour rounded-[18px] border-2 border-solid px-[20px] py-[8px] mx-auto md:py-4 
+
+export function getBtnLiStyled() {
+    return `border-bon-jour rounded-[18px] border-2 border-solid px-[20px] py-[8px] mx-auto md:py-4
     md:px-6.5  xl:px-7 xl:py-4`
 }
 
-function getBtnStyle() {
+
+export function getBtnStyle() {
     return `flex items-center gap-3.5 md:text-xl w-54 md:w-64 md:gap-3 xl:gap-7 xl:w-85`
 }
+
 
 function getInputStyled() {
     return `autofill:!text-white md:text-xl w-[100%] rounded-[18px] border-2 px-4 py-[9px] outline-none placeholder:text-white md:px-4.5 md:py-3.5 xl:py-[18px] xl:px-[30px]`
 }
 
+
 function getErrorStyled() {
     return `absolute bottom-0 left-4 text-rose-900 dark:text-red-500 text-sm md:text-base md:left-5 xl:left-8`
 }
 
+
 export default Registration
+
+

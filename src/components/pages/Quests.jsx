@@ -2,7 +2,7 @@ import { gql } from "@apollo/client"
 import { Component } from "react"
 import { Link } from "react-router"
 import { client } from "../../constans/client"
-import { getId } from "../../constans/id"
+// import { getId } from "../../constans/id"
 
 const GET_HISTORY = gql`
     query GetQuests {

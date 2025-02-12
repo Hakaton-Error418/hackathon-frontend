@@ -10,6 +10,8 @@ import { Profile } from "./components/pages/Profile";
 import { Quest } from "./components/pages/Test";
 import { TestLayout } from "./Layouts/TestLayout";
 import Questions from "./components/pages/TestsPage/Question";
+import Quests from "./components/pages/Quests";
+import CreateQuests from "./components/pages/Profile/Quest/CreateQuests";
 
 
 export const App = () => {
@@ -24,11 +26,11 @@ export const App = () => {
                         {/* <Route path="quests" element={<QuestsLayout />}>
                         <Route path="/profile" element={<ProfileLayout />} />
                         {/* <Route path="setting" element={<ProfileSetting />} />
-                        <Route path="rating" element={<Rating />} />
-                        <Route path="quests" element={<QuestsLayout />}>
+                        <Route path="rating" element={<Rating />} /> */}
+                        <Route path="quests">
                             <Route index element={<Quests />} />
                             <Route path="new" element={<CreateQuests />} />
-                        </Route> */}
+                        </Route>
                         {/* <Route path="history" element={<History />} /> */}
                         <Route path="achievements" element={<Achivments />} />
                     </Route>
