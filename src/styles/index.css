@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -13,9 +13,8 @@ main {
 }
 
 @theme {
-
-    --breakpoint-xl:1440px;
-    --breakpoint-md:768px;
+    --breakpoint-xl: 1440px;
+    --breakpoint-md: 768px;
 
     --font-roboto: "Roboto";
 

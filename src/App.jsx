@@ -4,6 +4,7 @@ import { Profile } from "./components/pages/Profile"
 import { Layout } from "./Layouts/Layout"
 import { ApolloProvider } from "@apollo/client"
 import { client } from "./constans/client"
+import { ProfileLayout } from "./Layouts/ProfileLayout"
 
 export const App = () => {
     return (
@@ -12,8 +13,8 @@ export const App = () => {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />
-                        {/* <Route path="/profile" element={<ProfileLayout />}> */}
-                        {/* <Route index element={<Profile />} /> */}
+                        <Route path="/profile" element={<ProfileLayout />} />
+                        <Route index element={<Profile />} />
                         {/* <Route path="setting" element={<ProfileSetting />} />
                         <Route path="rating" element={<Rating />} />
                         <Route path="quests" element={<QuestsLayout />}>

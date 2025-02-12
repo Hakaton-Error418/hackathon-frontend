@@ -3,6 +3,7 @@ import GetUserSvgIcon from "../img/getUserSvgIcon"
 import GetSunSvg from "../img/getSunSvg"
 import GetMoonSvg from "../img/getMoonSvg"
 import GetLogoSvg from "../img/getLogoSvg"
+import { Link } from "react-router"
 
 class Header extends Component {
     changeTheme() {
@@ -16,12 +17,12 @@ class Header extends Component {
         return (
             <header className="dark:bg-black-opacity bg-cool-grey mx-[3px] mt-[3px] rounded-[20px] text-white duration-500 md:mx-[7px] md:mt-[10px] xl:mx-[16px] xl:mt-[10px]">
                 <div className="flex min-w-[314px] items-center justify-between px-1.5 py-3.5 md:min-w-[754px] md:pt-5 md:pr-6 md:pl-16 xl:min-w-[1408px] xl:py-5 xl:pr-8 xl:pl-52">
-                    <a
-                        href="#"
+                    <Link
+                        to="/"
                         className="flex h-12.5 w-12.5 items-center justify-center md:h-20 md:w-20 xl:h-25 xl:w-25"
                     >
                         <GetLogoSvg />
-                    </a>
+                    </Link>
                     <div className="flex">
                         <ul className="mr-[11px] flex items-center gap-1.5 md:mr-4 md:gap-4 xl:mr-7.5 xl:gap-11.5">
                             <li>
@@ -38,9 +39,12 @@ class Header extends Component {
                                 </button>
                             </li>
                         </ul>
-                        <div className="dark:text-color-grey mr-1 h-11 w-11 rounded-[50%] bg-blue-200 p-[3.5px] duration-500 md:mr-4 md:h-21 md:w-21 md:p-[7px] xl:mr-7.5 xl:h-25 xl:w-25 xl:p-[9.5px] dark:bg-blue-600">
+                        <Link
+                            to="/profile"
+                            className="dark:text-color-grey mr-1 h-11 w-11 rounded-[50%] bg-blue-200 p-[3.5px] duration-500 md:mr-4 md:h-21 md:w-21 md:p-[7px] xl:mr-7.5 xl:h-25 xl:w-25 xl:p-[9.5px] dark:bg-blue-600"
+                        >
                             <GetUserSvgIcon className="text-2xl" />
-                        </div>
+                        </Link>
                         <label className="bg-grey relative flex w-7.5 flex-col justify-between rounded-[20px] px-1.25 py-0.75 transition-colors duration-500 md:h-21 md:w-[46px] md:rounded-[30px] md:p-2 xl:h-[100px] xl:w-[60px] xl:p-2.5 dark:bg-blue-600">
                             <div className="text-grey dark:bon-jour z-10 flex h-5 w-5 items-center justify-between rounded-[50%] p-0.5 duration-500 md:h-7.5 md:w-7.5 xl:h-[40px] xl:w-[40px] xl:p-1 dark:text-blue-600">
                                 <GetSunSvg />
