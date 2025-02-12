@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router"
 import { Home } from "./components/pages/Home"
-import { Profile } from "./components/pages/Profile"
 import { Layout } from "./Layouts/Layout"
 import { ApolloProvider } from "@apollo/client"
 import { client } from "./constans/client"
 import { ProfileLayout } from "./Layouts/ProfileLayout"
 import Achivments from "./components/pages/Profile/Achievements"
 import { Foo } from "./components/pages/Profile/Rating"
+
 export const App = () => {
     return (
         <>
@@ -17,6 +17,10 @@ export const App = () => {
                         <Route path="/profile" element={<ProfileLayout />}>
                         <Route index element={<Profile />} />
                         {/* <Route path="quests" element={<QuestsLayout />}>
+                        <Route path="/profile" element={<ProfileLayout />} />
+                        {/* <Route path="setting" element={<ProfileSetting />} />
+                        <Route path="rating" element={<Rating />} />
+                        <Route path="quests" element={<QuestsLayout />}>
                             <Route index element={<Quests />} />
                             <Route path="new" element={<CreateQuests />} />
                         </Route> */}
