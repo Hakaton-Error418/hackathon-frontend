@@ -45,5 +45,5 @@ docker run -p 5173:5173 hackathon-frontend
 
 Тепер додаток буде доступний за адресою `http://localhost:5173`.
 
-### Backend частину ви можете знайти за посиланням https://github.com/Hakaton-Error418
+### Backend частину ви можете знайти за посиланням https://github.com/Hakaton-Error418/hakaton-backend
 
