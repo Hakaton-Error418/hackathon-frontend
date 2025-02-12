@@ -60,7 +60,7 @@ const SIGNIN_USER = gql`
     }
 `
 
-class Registration extends Component {
+export class Registration extends Component {
     state = {
         loader: false,
     }
