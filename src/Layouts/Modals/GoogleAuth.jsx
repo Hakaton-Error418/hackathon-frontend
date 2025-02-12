@@ -1,6 +1,5 @@
 import { useGoogleLogin } from "@react-oauth/google"
 import { TbBrandGoogleFilled } from "react-icons/tb"
-import { getBtnLiStyled, getBtnStyle } from "./registration"
 
 function GoogleAuth({ handleSubmit }) {
     const login = useGoogleLogin({
@@ -22,6 +21,7 @@ function GoogleAuth({ handleSubmit }) {
                     avatar: picture,
                     password: id,
                 }
+                console.log(data)
                 handleSubmit(data)
             } catch (error) {
                 console.error(error)
@@ -45,6 +45,15 @@ function GoogleAuth({ handleSubmit }) {
             </button>
         </li>
     )
+}
+
+function getBtnLiStyled() {
+    return `border-bon-jour rounded-[18px] border-2 border-solid px-[20px] py-[8px] mx-auto md:py-4 
+    md:px-6.5  xl:px-7 xl:py-4`
+}
+
+function getBtnStyle() {
+    return `flex items-center gap-3.5 md:text-xl w-54 md:w-64 md:gap-3 xl:gap-7 xl:w-85`
 }
 
 export default GoogleAuth

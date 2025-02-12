@@ -1,8 +1,7 @@
-import { useQuery, gql } from "@apollo/client"
-import { Outlet } from "react-router"
-import SettingsButton from "../components/profile-components/ProfileSettings"
-import { ProfileRating } from "../components/profile-components/Rating-user"
-
+import { useQuery, gql } from "@apollo/client";
+import { Outlet } from "react-router";
+import SettingsButton from "../components/profile-components/ProfileSettings";
+import {ProfileRating} from "../components/profile-components/Rating-user";
 const GET_USER = gql`
     query {
         getUsers {

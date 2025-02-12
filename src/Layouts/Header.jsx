@@ -4,8 +4,7 @@ import GetSunSvg from "../img/GetSunSvg"
 import GetMoonSvg from "../img/GetMoonSvg"
 import GetLogoSvg from "../img/GetLogoSvg"
 import { Link } from "react-router"
-import { getToken } from "../constans/token"
-
+import { NavLink } from "react-router"
 class Header extends Component {
     changeTheme() {
         const html = window.document.documentElement
@@ -27,9 +26,11 @@ class Header extends Component {
                     <div className="flex">
                         <ul className="mr-[11px] flex items-center gap-1.5 md:mr-4 md:gap-4 xl:mr-7.5 xl:gap-11.5">
                             <li>
-                                <button className={getBtnStyle()}>
-                                    Join quest
-                                </button>
+                                <NavLink to="/test/question/67acda56fdb40c99506a1019/67acda6cfdb40c99506a101d">
+                                    <button className={getBtnStyle()}>
+                                        Join quest
+                                    </button>
+                                </NavLink>
                             </li>
                             <li>
                                 <button
