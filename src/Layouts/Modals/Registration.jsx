@@ -2,12 +2,12 @@ import { ErrorMessage, Field, Form, Formik } from "formik"
 import { Component } from "react"
 import { object, ref, string } from "yup"
 import { FaFacebook } from "react-icons/fa"
-import { TbBrandGoogleFilled } from "react-icons/tb"
 import { RxCross1 } from "react-icons/rx"
 import { gql } from "@apollo/client"
 import { client } from "../../constans/client"
 import { setToken } from "../../constans/token"
 import Loader from "../Loader"
+import GoogleAuth from "./GoogleAuth"
 
 const schemaYup = object({
     userName: string()
@@ -60,7 +60,7 @@ const SIGNIN_USER = gql`
     }
 `
 
-class Registration extends Component {
+export class Registration extends Component {
     state = {
         loader: false,
     }
@@ -102,6 +102,13 @@ class Registration extends Component {
         })
         return data
     }
+
+    // componentDidMount() {
+    //     this.googleLogin = googleTokenClient({
+    //       client_id: "YOUR_CLIENT_ID",
+    //       callback: (response) => console.log(response),
+    //     });
+    //   }
 
     getData(values) {
         const data = { ...values }
@@ -148,18 +155,7 @@ class Registration extends Component {
                                         Continue with Facebook
                                     </button>
                                 </li>
-                                <li className={getBtnLiStyled()}>
-                                    <button
-                                        className={getBtnStyle()}
-                                        type="button"
-                                    >
-                                        <TbBrandGoogleFilled
-                                            className="h-7.5 w-7.5 xl:h-10 xl:w-10"
-                                            color="#fff"
-                                        />
-                                        Continue with Google
-                                    </button>
-                                </li>
+                                <GoogleAuth handleSubmit={this.handleSubmit} />
                             </ul>
                             <p className="mb-6 text-center text-[16px] md:text-[22px] xl:mb-7 xl:text-[24px]">
                                 or

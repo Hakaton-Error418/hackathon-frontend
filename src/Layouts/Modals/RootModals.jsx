@@ -1,5 +1,5 @@
 import { Component } from "react"
-import Registration from "./registration"
+import Registration from "./Registration"
 
 class RootModals extends Component {
     state = {
