@@ -4,17 +4,21 @@ import Registration from "./registration"
 class RootModals extends Component {
     state = {
         isReg: false,
-        isSignin: true,
+        isSignin: false,
     }
 
     changeState(name) {
         this.setState((prev) => ({
             [name]: !prev[name],
         }))
+        if (name === "isSignin") {
+            this.props.changeIsSignin()
+        }
     }
 
     render() {
-        const { isReg, isSignin } = this.state
+        const { isReg } = this.state
+        const { isSignin } = this.props
 
         return (
             <>

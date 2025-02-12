@@ -33,6 +33,28 @@ main {
     --color-bon-jour: #e0d9e0;
     --color-grey: #ccc;
     --color-black-opacity: rgba(0, 0, 0, 0.75);
+    --color-shadow: rgba(206, 212, 218, 0.5);
+    --color-grey-light: #f8f9fa;
+    --color-grey-blue: rgba(101, 113, 135, 0.5);
+    --color-grey-opacity: rgba(101, 113, 135, 0.5);
+    --color-dark-brawn: #212529;
+}
+
+.container {
+    min-width: 300px;
+    padding: 0 10px;
+}
+@media (min-width: 768px) {
+    .container {
+        min-width: 648px;
+        padding: 0 60px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        min-width: 1032px;
+        padding: 0 204px;
+    }
 }
 
 .is-hidden {
