@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Lia500Px } from 'react-icons/lia'
+
 export default class Achivments_card extends Component {
   render() {
     const {name} = this.props
